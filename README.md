@@ -11,7 +11,8 @@ Trying to learn how Consul works for service registration, discovery, and monito
 <ol>
   <li>Install VirtualBox on your workstation.</li>
   <li>Install Vagrant on your workstation.</li>
-  <li>Clone the repo and change the box nam in the Vagrantfile to a Windows 2012 R2 box that works for you.</li>
+  <li>Clone the repo and change the box name in the Vagrantfile to a Windows 2012 R2 box that works for you.</li>
+  <li>Specify the number of nodes to create in NODE_COUNT variable in Vagrantfile</li>
 </ol>
 
 ## To Do
