@@ -27,7 +27,8 @@ Vagrant.configure(2) do |config|
       config.vm.communicator = "winrm"
       config.vm.provision "shell" do |shell|
         # shell.path: "scripts/consul_install.ps1"
-        inline: "choco install consul -y"
+        shell.inline = "choco install consul -y"
+      end
 		end
 	end
 end
