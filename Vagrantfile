@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
-NODE_COUNT = 2
+# NODE_COUNT = 2
 Vagrant.configure(2) do |config|
 
   # config.vm.network "public_network", bridged: "en0: Wi-Fi (AirPort)"
@@ -26,14 +26,17 @@ Vagrant.configure(2) do |config|
   end
 
   # Loop through and create the nodes
-  NODE_COUNT.times do |i|
+  # NODE_COUNT.times do |i|
+  (1..2).each do |i|
     # Settings for VMs
     node_id = "node#{i}"
+    mac_addr = "08002712345#{i}"
 		config.vm.define node_id do |node|
       # Specify the box
-      config.vm.box = "Windows-2012r2"
+      node.vm.box = "Windows-2012r2"
       node.vm.guest = :windows
       node.vm.communicator = "winrm"
+      node.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", mac: mac_addr
 		end
 	end
 end
