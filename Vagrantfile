@@ -21,8 +21,8 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell" do |shell|
-    # shell.path: "scripts/consul_install.ps1"
-    shell.inline = "choco install consul -y"
+    shell.path = "scripts/configure_consul.ps1"
+    # shell.inline = "choco install consul -y"
   end
 
   # Loop through and create the nodes
